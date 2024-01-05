@@ -166,7 +166,7 @@ a=ptime:20
 
 ## Requirements
 
-**RTCKit\SDP** is compatible with PHP 7.4+ and has no external library and extension dependencies.
+**RTCKit\SDP** is compatible with PHP 8.1+ and has no external library and extension dependencies.
 
 ## Installation
 
