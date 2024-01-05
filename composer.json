@@ -1,0 +1,59 @@
+{
+  "name": "rtckit/sdp",
+  "description": "Session Description Protocol (SDP) Library for PHP",
+  "version": "0.1.0",
+  "type": "library",
+  "keywords": [
+    "SDP",
+    "session description protocol",
+    "voip",
+    "rfc 2327",
+    "rfc 4566",
+    "rfc 8866",
+    "telephony",
+    "telco"
+  ],
+  "homepage": "https://github.com/rtckit/php-sdp",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Ciprian Dosoftei"
+    }
+  ],
+  "support": {
+    "email": "hello@rtckit.io",
+    "issues": "https://github.com/rtckit/php-sdp/issues"
+  },
+  "require": {
+    "php": ">=8.1.0"
+  },
+  "require-dev": {
+    "phpstan/phpstan": "^1.10",
+    "phpunit/phpunit": "^10.5",
+    "symfony/yaml": "^6.3|^7.0",
+    "vimeo/psalm": "^5.18"
+  },
+  "autoload": {
+    "psr-4": {
+      "RTCKit\\SDP\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "RTCKit\\SDP\\": "tests/"
+    }
+  },
+  "config": {
+      "allow-plugins": false,
+      "platform": {
+          "php": "8.1"
+      }
+  },
+  "scripts": {
+      "phpstan": "php -d memory_limit=-1 ./vendor/bin/phpstan analyse -c ./etc/phpstan.neon -n -vvv --ansi --level=max src",
+      "psalm": "php -d memory_limit=-1 ./vendor/bin/psalm --config=./etc/psalm.xml",
+      "test": "php -d memory_limit=-1 ./vendor/bin/phpunit -c ./etc/phpunit.xml.dist",
+      "coverage": "php -d extension=pcov -d memory_limit=-1 ./vendor/bin/phpunit -c ./etc/phpunit.xml.dist --coverage-text --coverage-html=reports/coverage",
+      "profile": "php -d memory_limit=-1 ./examples/99-crude-benchmark.php"
+  }
+}
